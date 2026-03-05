@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import DurationExercise from "./components/DurationExercise/index.js";
 import RepetitionExercise from "./components/RepetitionExercise/index.js";
+import RunningExercise from "./components/RunningExercise/index.js";
 
 function App() {
   const [selected, setSelected] = useState(null);
@@ -10,7 +11,7 @@ function App() {
     { name: "Push-Ups", type: "repetition" },
     { name: "Sit-Ups", type: "repetition" },
     { name: "Pull-Ups", type: "repetition" },
-    { name: "Running", type: "duration" },
+    { name: "Running Track", type: "running" },
     { name: "Plank", type: "duration" },
     { name: "Treading Water", type: "duration" }
   ];
@@ -24,6 +25,10 @@ function App() {
 
     if (selected.type === "duration") {
       return <DurationExercise name={selected.name} />
+    }
+
+    if (selected.type === "running") {
+      return <RunningExercise />
     }
   };
 
